@@ -3,13 +3,13 @@
 var through = require('through2');
 var parser = require('tap-parser');
 
-var out = through();
-var p = parser();
+var output = through();
+var input = parser();
 
-process.stdin.pipe(p);
+process.stdin.pipe(input);
 
-p.on('assert', function (assert) {
-    out.push('an assertion: ' + assert.ok + '\n');
+input.on('assert', function (assert) {
+    output.push('an assertion: ' + assert.ok + '\n');
 });
 
-out.pipe(process.stdout);
+output.pipe(process.stdout);

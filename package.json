@@ -12,5 +12,8 @@
     "reporter"
   ],
   "author": "James Monger <jameskmonger@hotmail.co.uk> (http://jamesmonger.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "through2": "^2.0.1"
+  }
 }

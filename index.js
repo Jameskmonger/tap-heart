@@ -21,4 +21,8 @@ input.on('assert', function (assert) {
     output.push(getAssertionMessage(assert));
 });
 
+input.on('complete', function (results) {
+    output.push('\n');
+});
+
 output.pipe(process.stdout);

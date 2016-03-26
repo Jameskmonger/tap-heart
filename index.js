@@ -14,7 +14,7 @@ var getAssertionMessage = function (assert) {
         return figures.heart;
     }
 
-    return 'X';
+    return figures.cross;
 };
 
 input.on('assert', function (assert) {

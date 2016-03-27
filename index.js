@@ -4,6 +4,7 @@ var through = require('through2');
 var parser = require('tap-parser');
 var figures = require('figures');
 var chalk = require('chalk');
+var percentage = require('percentage');
 
 var output = through();
 var input = parser();
@@ -18,11 +19,20 @@ var getAssertionMessage = function (assert) {
     return chalk.red(figures.cross) + ' ';
 };
 
+var getResultsMessage = function (results) {
+    var passed = results.pass;
+    var count = results.count;
+
+    return passed + ' out of ' + count + ' tests passed (' + percentage(passed / count) + ')';
+};
+
 input.on('assert', function (assert) {
     output.push(getAssertionMessage(assert));
 });
 
 input.on('complete', function (results) {
+    output.push('\n');
+    output.push(getResultsMessage(results));
     output.push('\n');
 });
 

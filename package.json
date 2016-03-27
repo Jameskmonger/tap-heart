@@ -14,6 +14,7 @@
   "author": "James Monger <jameskmonger@hotmail.co.uk> (http://jamesmonger.com)",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^1.1.1",
     "figures": "^1.5.0",
     "tap-parser": "^1.2.2",
     "through2": "^2.0.1"

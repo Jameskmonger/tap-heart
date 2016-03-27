@@ -10,7 +10,8 @@
     "TAP",
     "heart",
     "reporter",
-    "consumer"
+    "consumer",
+    "simple"
   ],
   "author": "James Monger <jameskmonger@hotmail.co.uk> (http://jamesmonger.com)",
   "license": "MIT",

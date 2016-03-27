@@ -12,10 +12,10 @@ process.stdin.pipe(input);
 
 var getAssertionMessage = function (assert) {
     if (assert.ok) {
-        return chalk.green(figures.heart);
+        return chalk.green(figures.heart) + ' ';
     }
 
-    return chalk.red(figures.cross);
+    return chalk.red(figures.cross) + ' ';
 };
 
 input.on('assert', function (assert) {

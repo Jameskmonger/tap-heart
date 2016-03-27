@@ -3,6 +3,7 @@
 var through = require('through2');
 var parser = require('tap-parser');
 var figures = require('figures');
+var chalk = require('chalk');
 
 var output = through();
 var input = parser();
@@ -11,10 +12,10 @@ process.stdin.pipe(input);
 
 var getAssertionMessage = function (assert) {
     if (assert.ok) {
-        return figures.heart;
+        return chalk.green(figures.heart);
     }
 
-    return figures.cross;
+    return chalk.red(figures.cross);
 };
 
 input.on('assert', function (assert) {

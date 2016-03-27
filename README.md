@@ -2,6 +2,8 @@
 
 A simple and clean [TAP consumer](https://testanything.org/).
 
+![tap-heart](http://i.imgur.com/LDxaSdo.png)
+
 ## Installation
 
     $ npm install tap-heart

@@ -1,6 +1,6 @@
 {
   "name": "tap-heart",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A clean TAP reporter showing hearts and errors.",
   "main": "index.js",
   "scripts": {

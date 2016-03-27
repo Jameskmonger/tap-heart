@@ -9,7 +9,8 @@
   "keywords": [
     "TAP",
     "heart",
-    "reporter"
+    "reporter",
+    "consumer"
   ],
   "author": "James Monger <jameskmonger@hotmail.co.uk> (http://jamesmonger.com)",
   "license": "MIT",

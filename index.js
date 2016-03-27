@@ -20,10 +20,18 @@ var getAssertionMessage = function (assert) {
 };
 
 var getResultsMessage = function (results) {
+    var failureOutput = '';
+
+    for (var i = 0; i < results.failures.length; i++) {
+        failureOutput += chalk.red(figures.cross) + ' ' + chalk.dim(results.failures[i].name) + '\n';
+    }
+
     var passed = results.pass;
     var count = results.count;
 
-    return passed + ' out of ' + count + ' tests passed (' + percentage(passed / count) + ')';
+    var counts = passed + ' out of ' + count + ' tests passed (' + percentage(passed / count) + ')';
+
+    return failureOutput + '\n' + counts;
 };
 
 input.on('assert', function (assert) {
@@ -31,7 +39,7 @@ input.on('assert', function (assert) {
 });
 
 input.on('complete', function (results) {
-    output.push('\n');
+    output.push('\n\n');
     output.push(getResultsMessage(results));
     output.push('\n');
 });

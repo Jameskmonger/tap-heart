@@ -4,7 +4,8 @@
   "description": "A clean TAP reporter showing hearts and errors.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "keywords": [
     "TAP",
@@ -21,5 +22,8 @@
     "percentage": "^0.1.0",
     "tap-parser": "^1.2.2",
     "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^2.5.3"
   }
 }

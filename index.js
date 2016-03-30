@@ -5,11 +5,7 @@ var parser = require('tap-parser');
 var figures = require('figures');
 var chalk = require('chalk');
 var percentage = require('percentage');
-
-var output = through();
-var input = parser();
-
-process.stdin.pipe(input);
+var duplexer = require('duplexer');
 
 var getAssertionMessage = function (assert) {
     if (assert.ok) {
@@ -34,14 +30,20 @@ var getResultsMessage = function (results) {
     return failureOutput + '\n' + counts;
 };
 
-input.on('assert', function (assert) {
-    output.push(getAssertionMessage(assert));
-});
+module.exports = function () {
+    var output = through();
+    var input = parser();
+    var stream = duplexer(input, output);
 
-input.on('complete', function (results) {
-    output.push('\n\n');
-    output.push(getResultsMessage(results));
-    output.push('\n');
-});
+    input.on('assert', function (assert) {
+        output.push(getAssertionMessage(assert));
+    });
 
-output.pipe(process.stdout);
+    input.on('complete', function (results) {
+        output.push('\n\n');
+        output.push(getResultsMessage(results));
+        output.push('\n');
+    });
+
+    return stream;
+};

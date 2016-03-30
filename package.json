@@ -21,5 +21,13 @@
     "percentage": "^0.1.0",
     "tap-parser": "^1.2.2",
     "through2": "^2.0.1"
-  }
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Jameskmonger/tap-heart.git"
+    },
+    "bugs": {
+      "url": "https://github.com/Jameskmonger/tap-heart/issues"
+    },
+    "homepage": "https://github.com/Jameskmonger/tap-heart#readme"
 }

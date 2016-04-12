@@ -18,8 +18,10 @@ var getAssertionMessage = function (assert) {
 var getResultsMessage = function (results) {
     var failureOutput = '';
 
-    for (var i = 0; i < results.failures.length; i++) {
-        failureOutput += chalk.red(figures.cross) + ' ' + chalk.dim(results.failures[i].name) + '\n';
+    if (results.failures) {
+        results.failures.forEach(function (failure) {
+            failureOutput += chalk.red(figures.cross) + ' ' + chalk.dim(failure.name) + '\n';
+        });
     }
 
     var passed = results.pass;
